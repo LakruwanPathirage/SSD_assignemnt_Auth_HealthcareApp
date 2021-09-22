@@ -1,0 +1,37 @@
+body {
+  background: #333;
+  color: #fff;
+}
+#home-section {
+  background-image: url("../Frontend_images/istockphoto-1284636209-1024x1024.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 600px;
+  padding-top: 150px;
+}
+#home-section .dark-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 600px;
+}
+#home-section .home-inner {
+  padding-top: 150px;
+}
+#home-section .card-form {
+  opacity: 0.8;
+}
+#home-section .fas,
+#create-section .fas {
+  color: #008ed6;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.text-sign {
+  align-items: center;
+}

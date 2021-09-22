@@ -3,6 +3,8 @@ import "./App.css";
 import React, { Component } from "react";
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import LoGingComponent from "./custom_componets/Login";
+import Home from "./custom_componets/Home";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +36,7 @@ class App extends Component {
           exact
           strict
           render={props => {
-            return <LogIn {...props} />;
+            return <LoGingComponent {...props} />;
           }}
         />
       </Router>
