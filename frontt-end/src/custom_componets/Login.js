@@ -76,7 +76,12 @@ class LogIn extends React.Component {
 
                   <div class="row">
                     <div className="col-md-6 offset-4">
-                      <button type="button" class="btn btn-danger ">
+                      <a
+                        href="http://localhost:3000/auth/google"
+                        class="btn btn-danger btn-lg active"
+                        role="button"
+                        aria-pressed="true"
+                      >
                         <div className="row text-sign">
                           <div className="col-md-4 text-center">
                             <i class="fab fa-google-plus-square fa-3x"></i>
@@ -85,7 +90,7 @@ class LogIn extends React.Component {
                             <p2 className="d-block ">Signing In</p2>
                           </div>
                         </div>
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
