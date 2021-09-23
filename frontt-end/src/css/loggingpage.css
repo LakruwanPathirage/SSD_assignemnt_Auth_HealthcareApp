@@ -35,3 +35,24 @@ body {
 .text-sign {
   align-items: center;
 }
+.cus-align {
+  align-items: self-end;
+}
+.cus-flexx {
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+.home-background {
+  background-image: url("../Frontend_images/doctor.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 95vh;
+}
+.cus-heigt {
+  height: 70vh;
+}
+.card-heigh {
+  height: 50%;
+}
