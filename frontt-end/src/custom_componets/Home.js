@@ -34,28 +34,110 @@ class Home extends Component {
     this.state = {
       loggedIn: false,
       userName: "",
-      collapseID: "",
-      city: "",
-      hotel: "",
+      doctorName: "",
+      hospital_location: "",
       date: "",
       time: "",
-      persons: "",
       id: "RES-IT-" + Math.floor(Math.random() * 10000000),
-      city_selection: ["Colombo", "Kandy", "Galle"],
-      hotel_selection: ["Shangri-La Hotel", "Jetwing Hotel", "Cinnamon Hotel"],
+      doctor_selection: [
+        "Sumudu Lakruwan",
+        "Uditha chamara",
+        "Jayanath Perera",
+      ],
+      hospital_selection: [
+        "Asiri Hospital",
+        "Hemas  Hospital",
+        "jewling Hospital",
+      ],
     };
   }
 
-  //   changeHandler = event => {
-  //     this.setState({ [event.target.name]: event.target.value });
-  //   };
+  componentDidMount() {
+    //check whether user is authenticated
+    const option = {
+      method: "GET",
+      credentials: "include",
+    };
 
-  toggleCollapse = collapseID => () =>
-    this.setState(prevState => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : "",
-    }));
+    fetch("http://localhost:3000/profile/", option)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          loggedIn: res.status,
+          userName: res.name,
+        });
+      });
+  }
+
+  changeHandler = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  //submit form
+  submitHandler = event => {
+    event.preventDefault();
+    event.target.className += " was-validated";
+
+    if (
+      this.state.doctorName != "" &&
+      this.state.hospital_location != "" &&
+      this.state.date != "" &&
+      this.state.time != ""
+    ) {
+      var reservation_data = {
+        doctorName: this.state.doctorName,
+        hospital_location: this.state.hospital_location,
+        date: this.state.date,
+        time: this.state.time,
+        id: this.state.id,
+      };
+
+      console.log(reservation_data);
+      const option = {
+        method: "POST",
+        credentials: "include",
+        body: JSON.stringify(reservation_data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      // call end point to make reservation by sending email and creating google calendar event
+      fetch("http://localhost:3000/profile/reserve", option)
+        .then(res => res.json())
+        .then(res => {
+          if (res.status) {
+            toast.success("Email and Calendar Event created Successfully");
+            setTimeout(() => {
+              window.location.reload();
+            }, 2000);
+          } else {
+            toast.error("Error creating Email and Calendar Event");
+          }
+        });
+    }
+  };
 
   render() {
+    var i = 0;
+    var k = 0;
+
+    const Doctor_Select = this.state.doctor_selection.map(doctor => {
+      return (
+        <option key={i++} value={doctor}>
+          {doctor}
+        </option>
+      );
+    });
+
+    const Hospital_Select = this.state.hospital_selection.map(hospital => {
+      return (
+        <option key={i++} value={hospital}>
+          {hospital}
+        </option>
+      );
+    });
+
     return (
       <div>
         <Router>
@@ -90,7 +172,9 @@ class Home extends Component {
               <div className=" ml-auto  d-none d-md-flex">
                 <div class="nav-item text-dark mr-3 cus-flexx ">
                   <i class="fas fa-user-circle fa-2x px-1"></i>
-                  <p className="d-inline-block px-1">Sumudu</p>
+                  <p className="d-inline-block px-1">
+                    {this.state.userName ? this.state.userName : "sumudu"}
+                  </p>
                 </div>
               </div>
             </div>
@@ -121,21 +205,21 @@ class Home extends Component {
               <div className="col-md-8">
                 <div class="container">
                   <div className="card card-body mt-4 ">
-                    <form>
+                    <form onSubmit={this.submitHandler}>
                       <div class="form-group">
                         <label for="name" className="text-black p-2">
                           Select Doctor Name
                         </label>
                         <select
-                          value={this.state.city}
-                          name="city"
+                          value={this.state.doctorName}
+                          name="doctorName"
                           onChange={this.changeHandler}
                           id="defaultFormRegisterNameEx"
                           className="form-control"
                           required
                         >
                           <option value="">---Choose Doctor---</option>
-                          {/* {citiySelection}  enter doctors names */}
+                          {Doctor_Select} enter doctors names
                         </select>
                       </div>
                       <div class="form-group">
@@ -147,7 +231,7 @@ class Home extends Component {
                         </label>
                         <select
                           value={this.state.hotel}
-                          name="hotel"
+                          name="hospital_location"
                           onChange={this.changeHandler}
                           id="HospitalName"
                           className="form-control"
@@ -156,7 +240,7 @@ class Home extends Component {
                           <option value="">
                             ---Choose Hosptital Location---
                           </option>
-                          {/* {hotelSelection} */}
+                          {Hospital_Select}
                         </select>
                       </div>
                       <div class="form-group">
