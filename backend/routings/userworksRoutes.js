@@ -11,7 +11,7 @@ var pathToJson_1 = path.resolve(
 const credentials = JSON.parse(fs.readFileSync(pathToJson_1));
 
 //validate date and time sent by client to make google calendar events
-const datetimeValidatorStart = (date, time) => {
+const customstart_datetime_Validate = (date, time) => {
   var time_details = time.split(":");
   var date = new Date(date);
   date.setHours(time_details[0], time_details[1], 00);
@@ -99,7 +99,7 @@ route.post("/reserve", userAuthValidation, (req, res) => {
     var uName = req.user.firstName + " " + req.user.lastName;
 
     // validate and adjust date and time for google calendar event and gmail description
-    var validated_start_datetime = datetimeValidatorStart(
+    var validated_start_datetime = customstart_datetime_Validate(
       req.body.date,
       req.body.time
     );

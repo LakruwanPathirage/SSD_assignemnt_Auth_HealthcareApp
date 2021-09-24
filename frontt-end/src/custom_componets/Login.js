@@ -18,7 +18,7 @@ class LogIn extends React.Component {
           <div class="dark-overlay">
             <div class="home-inner container">
               <div class="row">
-                <div class="col-lg-8 d-none d-lg-block">
+                <div class="col-lg-8 ">
                   <h1>Channel your doctors</h1>
                   <div class="d-flex">
                     <div class="p-4 align-self-start">
@@ -62,7 +62,7 @@ class LogIn extends React.Component {
                 </div>
 
                 <div class="col-lg-4">
-                  <div className="row">
+                  <div className="row d-none d-lg-block">
                     <img
                       src={imgg}
                       class="img-fluid mb-3 rounded-circle"

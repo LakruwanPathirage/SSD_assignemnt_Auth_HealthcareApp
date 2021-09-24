@@ -66,8 +66,18 @@ class Home extends Component {
           loggedIn: res.status,
           userName: res.name,
         });
+        console.log(res);
       });
   }
+  //reset values
+  resetForm = () => {
+    this.setState({
+      doctorName: "",
+      hospital_location: "",
+      date: "",
+      time: "",
+    });
+  };
 
   changeHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -173,7 +183,7 @@ class Home extends Component {
                 <div class="nav-item text-dark mr-3 cus-flexx ">
                   <i class="fas fa-user-circle fa-2x px-1"></i>
                   <p className="d-inline-block px-1">
-                    {this.state.userName ? this.state.userName : "sumudu"}
+                    {this.state.userName ? this.state.userName : ""}
                   </p>
                 </div>
               </div>
@@ -207,14 +217,18 @@ class Home extends Component {
                   <div className="card card-body mt-4 ">
                     <form onSubmit={this.submitHandler}>
                       <div class="form-group">
-                        <label for="name" className="text-black p-2">
+                        <label
+                          for="name"
+                          htmlFor="doctor"
+                          className="text-black p-2"
+                        >
                           Select Doctor Name
                         </label>
                         <select
                           value={this.state.doctorName}
                           name="doctorName"
                           onChange={this.changeHandler}
-                          id="defaultFormRegisterNameEx"
+                          id="doctor"
                           className="form-control"
                           required
                         >
@@ -230,7 +244,7 @@ class Home extends Component {
                           Hotel Name
                         </label>
                         <select
-                          value={this.state.hotel}
+                          value={this.state.hospital_location}
                           name="hospital_location"
                           onChange={this.changeHandler}
                           id="HospitalName"
@@ -292,8 +306,16 @@ class Home extends Component {
                       <button class="btn btn-primary btn-block" type="submit">
                         Submit
                       </button>
+                      <button
+                        class="btn btn-warning btn-block m-1"
+                        type="reset"
+                        onClick={this.resetForm}
+                      >
+                        reset
+                      </button>
                     </form>
                   </div>
+                  <ToastContainer autoClose={2000} position="bottom-right" />
                 </div>
               </div>
             </div>
