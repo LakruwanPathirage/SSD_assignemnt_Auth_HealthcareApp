@@ -1,4 +1,9 @@
-/node_modules
-.env
+/backend/node_modules
+/backend/.env
 .env.local
 
+/backend/tokens.json
+
+/frontt-end/node_modules
+
+.idea
