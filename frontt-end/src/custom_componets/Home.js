@@ -155,7 +155,7 @@ class Home extends Component {
             <div className="container cus-alig">
               <a href="/home" class="navbar-brand">
                 <img src={imgg} width="50" height="50" alt="" />
-                <h3 class="d-inline align-middle p-1 text-dark">IChanneling</h3>
+                <h3 class="d-inline align-middle p-1 text-dark">IChannel</h3>
               </a>
 
               <button

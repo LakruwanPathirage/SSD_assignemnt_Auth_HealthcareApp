@@ -111,9 +111,9 @@ route.post("/reserve", userAuthValidation, (req, res) => {
     var receiver_email;
 
     if (req.body.hospital_location == "Asiri Hospital") {
-      receiver_email = "lakruwanpathirage01@gmail.com";
+      receiver_email = " asirihosipitalreservation@gmail.com";
     } else if (req.body.hospital_location == "Hemas  Hospital") {
-      receiver_email = "hemas.reservation.lk@gmail.com";
+      receiver_email = "lakruwanpathirage01@gmail.com";
     } else {
       receiver_email = "jewling.reservation.lk@gmail.com";
     }

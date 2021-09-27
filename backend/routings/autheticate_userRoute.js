@@ -3,7 +3,7 @@ const express = require("express");
 const route = express.Router();
 const passport = require("passport");
 
-// route responsible for setting scope and redirect user to authentication and consent screen
+// this route set the  scope and redirect in to consent screen
 route.get(
   "/google",
   passport.authenticate("google", {
