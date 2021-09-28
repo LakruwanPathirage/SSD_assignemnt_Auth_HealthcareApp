@@ -241,7 +241,7 @@ class Home extends Component {
                           htmlFor="HospitalName"
                           className="text-black p-1"
                         >
-                          Hotel Name
+                          Hospital Name
                         </label>
                         <select
                           value={this.state.hospital_location}
