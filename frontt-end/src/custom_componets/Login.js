@@ -53,6 +53,8 @@ class LogIn extends React.Component {
                             <i class="fab fa-google-plus-square fa-3x"></i>
                           </div>
                           <div className="col-md-8">
+
+                            {/* Sign In Button (Sign in with google)*/}
                             <p2 className="d-block ">Signing In</p2>
                           </div>
                         </div>
@@ -63,6 +65,7 @@ class LogIn extends React.Component {
 
                 <div class="col-lg-4">
                   <div className="row d-none d-lg-block">
+                    {/* IChannel Logo (Side))*/}
                     <img
                       src={imgg}
                       class="img-fluid mb-3 rounded-circle"
@@ -77,6 +80,7 @@ class LogIn extends React.Component {
             </div>
           </div>
         </header>
+        {/*Website Footer*/}
         <footer id="main-footer" class="py-5 bg-primary text-white">
           <div class="container">
             <div class="row text-center">

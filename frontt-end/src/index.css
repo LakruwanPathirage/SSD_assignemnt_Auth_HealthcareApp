@@ -108,4 +108,76 @@ code {
 
 
 
+.sidebarP2 {
+  height: 100%;
+  width: 250px;
+  margin-top : 62px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebarP2 {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #292b2c;
+  display: block;
+}
+
+.sidebar1P {
+  color: #0275d8;
+}
+
+.mainPage1 {
+  margin-left: 250px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+
+
+.dropbtn2 {
+  background-color : white;
+  color: #292b2c;
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  text-align : left;
+  z-index: 1;
+}
+
+.dropdown-content1 {
+  color: #292b2c;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+.dropdownP2{
+  display: block;
+}
+
+.dropbtnP {
+  background-color : white;
+}
+
 
