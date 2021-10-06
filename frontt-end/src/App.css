@@ -38,6 +38,9 @@
   }
 }
 
+
+
+
 .pClass{
   transform: rotate(360deg);
 }
@@ -54,7 +57,7 @@
   color: white;
 }
 
-.p2MyClass2 {
+.myPTop {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -70,4 +73,13 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.paraTop {
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+  margin-bottom: 20px;
+  color : red;
 }
