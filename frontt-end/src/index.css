@@ -11,3 +11,101 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+.pClass{
+  transform: rotate(360deg);
+}
+.p2MyClass2 {
+  align-items: center;
+  color: white;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.myPTop2 {
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.sidebarP2 {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebarP  {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+#nav-Top {
+  position: relative;
+}
+
+#npTop {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 0;
+}
+
+#p2Bottom {
+  height: 44px;
+  display: block;
+}
+
+#homeP {
+  left: 0px;
+  width: 46px;
+}
+
+#prevP {
+  left: 63px;
+
+}
+
+#nextP {
+  left: 129px;
+  width: 43px;
+}
+
+.PHead {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+
