@@ -37,3 +37,22 @@
     transform: rotate(360deg);
   }
 }
+
+.pClass{
+  transform: rotate(360deg);
+}
+.p2MyClass {
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.pClass2{
+  transform: rotate(360deg);
+}
+.p2MyClass2 {
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
